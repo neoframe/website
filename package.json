@@ -1,0 +1,30 @@
+{
+  "name": "neoframe-website",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "main": "dist/index.html",
+  "repository": "https://github.com/neoframe/website.git",
+  "author": "Ugo Stephant <ugo@poool.fr>",
+  "license": "MIT",
+  "packageManager": "yarn@4.5.3",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
+    "@vitejs/plugin-react": "4.3.4",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "typescript": "5.7.2",
+    "vite": "6.0.3"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  }
+}
