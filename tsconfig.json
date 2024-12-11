@@ -17,5 +17,8 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true
-  }
+  },
+  "include": [
+    "./src/global.d.ts", "src/**/*.ts", "src/**/*.tsx"
+  ]
 }

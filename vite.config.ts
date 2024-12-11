@@ -5,6 +5,11 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   root: './src',
+  assetsInclude: [
+    '**/*.gb',
+    '**/*.gbc',
+    '**/*.bin',
+  ],
   plugins: [
     react(),
   ],

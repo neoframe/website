@@ -1,8 +1,18 @@
-import { ReactNode } from 'react';
+import { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
-const App = (): ReactNode => {
-  return 'Hello, World!';
+import './index.css';
+import Home from './Home';
+import Play from './Play';
+
+const App = () => {
+  const [cartridge, setCartridge] = useState<number>(-1);
+
+  return cartridge >= 0 ? (
+    <Play cartridge={cartridge} />
+  ) : (
+    <Home onPlay={setCartridge} />
+  );
 };
 
 // App has to come from another file because HMR & fast refresh always rebuild
