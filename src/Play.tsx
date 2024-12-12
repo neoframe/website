@@ -25,14 +25,12 @@ const Play = ({ cartridge }: PlayProps) => {
   });
 
   useTimeout(() => {
-    console.log('INSERT');
     dispatch({ status: STATUS.INSERT });
   }, animationDuration / 2, [state.status], {
     enabled: state.status === STATUS.INIT,
   });
 
   useTimeout(() => {
-    console.log('PLAY');
     dispatch({ status: STATUS.PLAY });
   }, animationDuration + 500, [state.status], {
     enabled: state.status === STATUS.INSERT,
@@ -40,22 +38,22 @@ const Play = ({ cartridge }: PlayProps) => {
 
   return (
     <div className="play w-screen h-screen">
-        { state.status !== STATUS.PLAY && (
-          <img
-            src={cartridge === 0 ? '/images/cartridge-back-silver.svg' : '/images/cartridge-back.svg'}
-            className={classNames(
-              'fixed z-10 left-1/2 -top-[350px] transform -translate-x-1/2 -translate-y-1/2 w-[600px]',
-              {
-                '!top-[calc(100vh+350px)]': state.status === STATUS.INSERT,
-              }
-            )}
-            style={{
-              transitionProperty: 'top',
-              transitionDuration: `${animationDuration}ms`,
-              transitionTimingFunction: 'ease-in-out',
-            }}
-          />
-        ) }
+      { state.status !== STATUS.PLAY && (
+        <img
+          src={cartridge === 0 ? '/images/cartridge-back-silver.svg' : '/images/cartridge-back.svg'}
+          className={classNames(
+            'fixed z-10 left-1/2 -top-[350px] transform -translate-x-1/2 -translate-y-1/2 w-[600px]',
+            {
+              '!top-[calc(100vh+350px)]': state.status === STATUS.INSERT,
+            }
+          )}
+          style={{
+            transitionProperty: 'top',
+            transitionDuration: `${animationDuration}ms`,
+            transitionTimingFunction: 'ease-in-out',
+          }}
+        />
+      ) }
       <div
         className={classNames(
           'gameboy fixed left-1/2 top-[calc(100vh+270px+166px)] transform',
@@ -93,6 +91,6 @@ const Play = ({ cartridge }: PlayProps) => {
       </div>
     </div>
   );
-}
+};
 
 export default Play;
