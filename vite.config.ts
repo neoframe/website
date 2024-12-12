@@ -5,9 +5,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   root: './src',
-  base: process.env.NODE_ENV === 'production'
-    ? '/website/'
-    : '',
   build: {
     outDir: '../dist',
   },
